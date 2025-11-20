@@ -31,12 +31,6 @@ endif()
 
 qt_standard_project_setup(REQUIRES 6.5)
 
-set(QML_IMPORT_PATH
-   ${CMAKE_INSTALL_PREFIX}
-   CACHE STRING "QML模块导入路径" FORCE
-)
-
-
 
 
 #添加测试程序

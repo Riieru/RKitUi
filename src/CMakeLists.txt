@@ -7,6 +7,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 6.8 COMPONENTS Quick QML Core Gui REQUIRED)
 
+#qml模块名
+set(R_QML_MODULE_NAME "RKitUi")
+
 #检查包是否找到
 if(NOT Qt6_FOUND)
     message(FATAL_ERROR "Qt6模块未找到")
@@ -24,6 +27,13 @@ if(NOT Qt6Gui_FOUND)
     message(FATAL_ERROR "Qt6子模块Gui未找到")
 endif()
 
+#qml导入路径
+set(QML_IMPORT_PATH
+    ${QML_IMPORT_PATH}
+    ${CMAKE_INSTALL_PREFIX}
+    CACHE STRING "QML导入路径" FORCE
+)
+
 # qml目录
 set(QML_PATH qml)
 
@@ -34,8 +44,6 @@ set(QML_SINGLETON qml/SupportSingletonObject)
 file(GLOB_RECURSE qml_singleton_filelist
     ${QML_SINGLETON}/*.qml
 )
-
-message("acdadaaaaaaaaaaaaa" + ${qml_singleton_filelist})
 
 #给单例对象设置必要属性
 set_source_files_properties(${qml_singleton_filelist}
@@ -69,7 +77,7 @@ file(GLOB ${PROJECT_NAME}_src
 )
 
 qt_add_qml_module(${PROJECT_NAME}
-    URI "panel"
+    URI "${R_QML_MODULE_NAME}"
     VERSION 1.0
     STATIC
     NO_PLUGIN
@@ -109,11 +117,12 @@ install(TARGETS ${PROJECT_NAME}
 install(FILES
    ${CMAKE_CURRENT_BINARY_DIR}/qmldir
    ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.qmltypes
-   DESTINATION ${CMAKE_INSTALL_PREFIX}/${PROJECT_NAME}
+   DESTINATION ${CMAKE_INSTALL_PREFIX}/${R_QML_MODULE_NAME}
 )
 
 #安装qml文件
 install(DIRECTORY
     ${CMAKE_CURRENT_BINARY_DIR}/qml
-    DESTINATION ${CMAKE_INSTALL_PREFIX}/${PROJECT_NAME}
+    DESTINATION ${CMAKE_INSTALL_PREFIX}/${R_QML_MODULE_NAME}
 )
+

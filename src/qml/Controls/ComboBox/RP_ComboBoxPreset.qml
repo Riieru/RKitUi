@@ -1,5 +1,5 @@
 import QtQuick
-import panel
+import RKitUi
 
 
 Control_Core{

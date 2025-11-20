@@ -1,5 +1,5 @@
 import QtQuick
-import panel
+import RKitUi
 
 //将各子控件组合为下拉框控件
 Item {

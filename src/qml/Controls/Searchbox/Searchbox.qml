@@ -3,7 +3,7 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import QtQuick.Shapes
 import QtQuick.Controls.Basic
-import panel
+import RKitUi
 
  Item {
      id: pillSearchBox;

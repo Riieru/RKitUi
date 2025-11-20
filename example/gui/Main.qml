@@ -6,7 +6,7 @@ import QtQuick.Controls 2.15
 import QtQuick.Shapes
 import Qt5Compat.GraphicalEffects
 import QtQuick.Controls.Basic
-import panel
+import RKitUi
 
 Window {
     id: window

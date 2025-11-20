@@ -1,7 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Shapes
 import QtQuick.Layouts
-import panel
+import RKitUi
 
 //下载图案
 Item{

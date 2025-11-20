@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Shapes
 import QtQuick.Layouts
-import panel
+import RKitUi
 
 //下拉框
 Item {

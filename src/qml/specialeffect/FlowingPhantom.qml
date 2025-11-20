@@ -1,6 +1,6 @@
 import QtQuick 2.15
 import QtQuick.Shapes
-import panel
+import RKitUi
 //特效控件
 //一条线会随着path路径游动
 //存在BUG待修复，(1)位于setPathAttributes，如果相对路径=0，使用的是绝对路径，而正好绝对路径也=0，那此时绝对路径将会设置错误，会变成上一个pathmove的绝对路径

@@ -23,8 +23,8 @@ if(PANEL_BUILD_INSTALL)
     add_custom_target(
         ExecuteInstall
         ALL
-        COMMAND ${CMAKE_COMMAND} --install ${CMAKE_BINARY_DIR}  # 执行 install 命令
-        COMMENT "文件已安装到: ${CMAKE_INSTALL_PREFIX}"  # 构建时的提示信息
+        COMMAND ${CMAKE_COMMAND} --install ${CMAKE_BINARY_DIR}
+        COMMENT "文件已安装到: ${CMAKE_INSTALL_PREFIX}"
     )
   add_dependencies(ExecuteInstall example RKitUiSource)
 endif()

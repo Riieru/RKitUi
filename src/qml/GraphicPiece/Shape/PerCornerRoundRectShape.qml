@@ -1,6 +1,6 @@
 import QtQuick 2.15
 import QtQuick.Shapes
-import panel
+import RKitUi
 
 //圆角矩形背景板
 Item {
